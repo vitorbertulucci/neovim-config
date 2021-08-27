@@ -34,13 +34,17 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
+" Colorschemes
 Plug 'gruvbox-community/gruvbox'
+" Plug 'arzg/vim-colors-xcode'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'jacoborus/tender.vim'
+
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'preservim/nerdcommenter'
 
@@ -62,6 +66,12 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+" Vue highlight
+" Plug 'posva/vim-vue'
+" Plug 'leafOfTree/vim-vue-plugin'
 call plug#end()
 
 " lsp config
@@ -72,6 +82,9 @@ set shortmess+=c
 autocmd BufEnter * lua require'completion'.on_attach()
 
 colorscheme gruvbox
+" colorscheme xcodedark
+" colorscheme nord
+" colorscheme tender
 
 noremap ; :
 nnoremap <C-h> <cmd>bprev<cr>
@@ -103,3 +116,9 @@ nnoremap <C-t> <cmd>NERDTreeToggle<cr>
 
 " nvim-compe settings
 luafile ~/.config/nvim/plugin/nvim-compe.lua
+
+" built-in term
+tnoremap <Esc> <C-\><C-n>
+
+" Vim-vue config
+" let g:vue_pre_processors = ['pug', 'scss']
