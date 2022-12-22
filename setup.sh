@@ -3,6 +3,6 @@ NVIM_CONFIG_FOLDER=~/.config/nvim
 mkdir -p $NVIM_CONFIG_FOLDER
 
 # Copy files to neovim folder
-ln -s $(pwd)/init.vim $NVIM_CONFIG_FOLDER/init.vim
-ln -s $(pwd)/plugin ~/.config/nvim/
-ln -s $(pwd)/init.vim ~/.nvimrc
+ln -s $(pwd)/init.lua $NVIM_CONFIG_FOLDER/init.lua
+ln -s $(pwd)/after ~/.config/nvim/
+ln -s $(pwd)/lua ~/.config/nvim/
