@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('tpope/vim-fugitive')
 
+
+  -- use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -41,9 +43,28 @@ return require('packer').startup(function(use)
 		  {'hrsh7th/cmp-nvim-lua'},
 
 		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
+		  -- {'L3MON4D3/LuaSnip'},
+		  -- {'rafamadriz/friendly-snippets'},
 	  }
   }
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
+
+  use('nvim-tree/nvim-web-devicons')
+  use({
+    'yamatsum/nvim-nonicons',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  })
+
 
 end)

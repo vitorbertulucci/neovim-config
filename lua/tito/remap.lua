@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("c", "W", vim.cmd.write)
 vim.keymap.set("n", "<C-h>", vim.cmd.bprev)
 vim.keymap.set("n", "<C-l>", vim.cmd.bnext)
@@ -17,3 +17,4 @@ vim.keymap.set("x", "<leader>p", "\"_dp")
 
 -- select current word and change in file every match based on the text entered
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
