@@ -67,4 +67,10 @@ return require('packer').startup(function(use)
   })
 
 
+  use({
+    'akinsho/toggleterm.nvim',
+    tag = '*'
+  })
+
+
 end)

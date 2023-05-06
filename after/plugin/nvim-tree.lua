@@ -19,6 +19,14 @@ require("nvim-tree").setup({
     enable = true,
     update_root = false,
   },
+  view = {
+    width = {
+      min = 40,
+      max = 55,
+    },
+    centralize_selection = true,
+    preserve_window_proportions = true,
+  },
   filters = {
     dotfiles = true,
   },
